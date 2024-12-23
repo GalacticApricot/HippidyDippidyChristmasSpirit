@@ -341,7 +341,7 @@ document.getElementById("curtain3").style.background = mainColor,
 document.getElementById("curtain4").style.background = mainColor,
 document.getElementById("item").src = e.iconUrl,
 document.getElementById("name").innerHTML = e.name,
-document.querySelector("#rarity a").innerHTML = "£20 STEAM GIFTCARD",
+document.querySelector("#rarity a").innerHTML = e.rarity.toUpperCase(),
 document.getElementById("rarity").style.backgroundColor = mainColor,
 document.getElementById("ripple").style.background = "radial-gradient(circle, " + mainColor + "19 20%, " + mainColor + "4d, " + mainColor + "00 50%) no-repeat",
 document.getElementById("gradient").style.background = "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, " + mainColor + "55 100%)",
@@ -580,6 +580,7 @@ function finalReveal() {
     e.style.opacity = 1,
     e.style.top = "72%";
     let t = document.getElementById("type");
+    t.innerHTML = "£20 GIFTCARD",
     t.style.opacity = 1,
     t.style.top = "82%";
     let a = document.getElementById("rarity");
