@@ -315,7 +315,7 @@ case "attachment skin":
     break;
 case "charm":
     document.querySelector("#type img").src = "https://ubiservices.cdn.ubi.com/0d2ae42d-4c27-4cb7-af6c-2099062302bb/DeployerAssetsJune2023/73f4c31a_80da_465f_93ec_21af00e8de38.svg",
-    tWidth = 125;
+    tWidth = 153;
     break;
 case "main gadget":
     document.querySelector("#type a").innerHTML = "GADGET SKIN",
@@ -580,7 +580,7 @@ function finalReveal() {
     e.style.opacity = 1,
     e.style.top = "72%";
     let t = document.getElementById("type");
-    document.querySelector("#type a").innerHTML = "GADGET SKIN",
+    document.querySelector("#type a").innerHTML = "£20 STEAM",
     t.style.opacity = 1,
     t.style.top = "82%";
     let a = document.getElementById("rarity");
