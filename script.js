@@ -574,7 +574,6 @@ function continueReveal() {
     , 1e3)
 }
 function finalReveal() {
-    document.getElementById("buttons").style.visibility = 'visible';
     ripple();
     let e = document.getElementById("name");
     e.style.opacity = 1,
@@ -585,6 +584,7 @@ function finalReveal() {
     let a = document.getElementById("rarity");
     a.style.opacity = 1,
     a.style.top = "82%"
+    document.getElementById("buttons").style.visibility = 'visible';
 }
 document.addEventListener("keydown", function(e) {
     if (13 == e.keyCode) {
