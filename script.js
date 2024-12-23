@@ -574,6 +574,7 @@ function continueReveal() {
     , 1e3)
 }
 function finalReveal() {
+    document.getElementById("buttons").style.visibility = 'visible';
     ripple();
     let e = document.getElementById("name");
     e.style.opacity = 1,
