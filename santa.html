@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIF Duplication</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .gif {
+            position: absolute;
+            background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHdsbXg5ZXhrdThsbzFoZDE5YnM2ZzJrZ3hkN3l4ZmQ2NmFhNzA4OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6fJdYXEvMa5ZmlI4/giphy.webp');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container"></div>
+
+    <script>
+        const container = document.getElementById('container');
+        let numGifs = 1; // Initial number of GIFs to display
+
+        // Function to play the sound
+
+        function createGifs() {
+            // Remove all GIFs from the container
+            container.innerHTML = '';
+
+            // Calculate the number of rows and columns
+            const size = Math.ceil(Math.sqrt(numGifs));
+            const gifWidth = 100 / size; // Each gif takes a percentage of the screen width
+            const gifHeight = 100 / size; // Each gif takes a percentage of the screen height
+
+            // Play sound every time a new GIF is created
+
+            for (let i = 0; i < numGifs; i++) {
+                const gif = document.createElement('div');
+                gif.classList.add('gif');
+                gif.style.width = `${gifWidth}%`;
+                gif.style.height = `${gifHeight}%`;
+
+                // Position each gif in a grid-like pattern
+                const row = Math.floor(i / size);
+                const col = i % size;
+                gif.style.top = `${row * gifHeight}%`;
+                gif.style.left = `${col * gifWidth}%`;
+
+                container.appendChild(gif);
+            }
+        }
+
+        // Duplicate GIFs every second
+        setInterval(() => {
+            numGifs *= 4;
+            createGifs();
+        }, 1000);
+
+        // Initialize with the first set of GIFs
+        createGifs();
+    </script>
+</body>
+</html>
