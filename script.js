@@ -580,7 +580,7 @@ function finalReveal() {
     e.style.opacity = 1,
     e.style.top = "72%";
     let t = document.getElementById("type");
-    t.innerHTML = "£20 GIFTCARD",
+    document.querySelector("#type a").innerHTML = "GADGET SKIN",
     t.style.opacity = 1,
     t.style.top = "82%";
     let a = document.getElementById("rarity");
